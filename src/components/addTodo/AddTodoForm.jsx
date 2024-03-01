@@ -1,4 +1,9 @@
-const AddTodoForm = ({ setInputTitle, setInputDescription, handleAddTodo }) => {
+const AddTodoForm = ({
+  setInputTitle,
+  setInputDescription,
+  handleAddTodo,
+  setAddModalOpen,
+}) => {
   return (
     <div className="add-todo">
       <label htmlFor="title">Title:</label>
@@ -15,7 +20,11 @@ const AddTodoForm = ({ setInputTitle, setInputDescription, handleAddTodo }) => {
         placeholder="description"
         onChange={(e) => setInputDescription(e.currentTarget.value)}
       />
-      <button onClick={handleAddTodo}>Add ➕</button>
+      <div className="buttons">
+        <button onClick={handleAddTodo}>Add</button>
+
+        <button onClick={setAddModalOpen}>Close</button>
+      </div>
     </div>
   );
 };

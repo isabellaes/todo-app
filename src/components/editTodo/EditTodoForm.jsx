@@ -23,9 +23,10 @@ const EditTodoForm = ({
         value={todo.description}
         onChange={(e) => handleSetEditDescription(e.currentTarget.value)}
       />
-      <button onClick={handleSaveEdit}>Save changes</button>
-      <br />
-      <button onClick={handleClose}>Close</button>
+      <div className="buttons">
+        <button onClick={handleSaveEdit}>Save</button>
+        <button onClick={handleClose}>Close</button>
+      </div>
     </div>
   );
 };

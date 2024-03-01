@@ -1,35 +1,16 @@
-.content {
-  display: flex;
-  flex-direction: row;
+.todo-list {
+  list-style-type: none;
 
-  main {
+  .buttons {
     display: flex;
-    flex-direction: column;
-    .todo-list {
-      list-style-type: none;
-    }
-  }
-
-  .edit-todo {
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    width: 100%;
     margin-top: 1em;
-    padding: 1em;
-    border: 1px solid rgb(238, 108, 8);
-
     button {
-      margin-top: 10px;
+      width: 50%;
     }
-  }
-  .add-todo {
-    display: flex;
-    flex-direction: column;
-    margin-top: 1em;
-    padding: 1em;
-    border: 1px solid rgb(5, 245, 85);
-
-    button {
-      margin-top: 10px;
+    .delete {
+      background-color: rgb(233, 125, 125);
     }
   }
 
@@ -38,22 +19,10 @@
     background-color: aqua;
     border: 1px solid black;
     margin: 1em;
+    width: fit-content;
 
     input {
       margin-left: 0.5em;
-    }
-
-    .buttons {
-      display: flex;
-      flex-direction: row;
-      width: 100%;
-      margin-top: 1em;
-      button {
-        width: 50%;
-      }
-      .delete {
-        background-color: rgb(233, 125, 125);
-      }
     }
   }
 }
