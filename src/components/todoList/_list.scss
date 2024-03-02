@@ -1,28 +1,35 @@
 .todo-list {
   list-style-type: none;
 
-  .buttons {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    margin-top: 1em;
-    button {
-      width: 50%;
-    }
-    .delete {
-      background-color: rgb(233, 125, 125);
-    }
-  }
-
   .todo-item {
     padding: 1em;
-    background-color: aqua;
+    background-color: rgb(209, 246, 216);
     border: 1px solid black;
     margin: 1em;
     width: fit-content;
 
     input {
       margin-left: 0.5em;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: 100%;
+      margin-top: 1em;
+      button {
+        width: 45%;
+        background-color: rgb(186, 175, 238);
+        border: 1px solid rgb(0, 38, 255);
+        padding: 5px;
+        border-radius: 5px;
+      }
+
+      .delete {
+        background-color: rgb(238, 175, 175);
+        border: 1px solid red;
+      }
     }
   }
 }

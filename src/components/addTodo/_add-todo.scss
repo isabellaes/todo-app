@@ -8,13 +8,15 @@
   .buttons {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     width: 100%;
     margin-top: 1em;
     button {
-      width: 50%;
-    }
-    .delete {
-      background-color: rgb(233, 125, 125);
+      width: 45%;
+      background-color: rgb(186, 175, 238);
+      border: 1px solid rgb(0, 38, 255);
+      padding: 5px;
+      border-radius: 5px;
     }
   }
 }

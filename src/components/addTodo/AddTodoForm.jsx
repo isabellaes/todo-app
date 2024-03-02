@@ -22,7 +22,6 @@ const AddTodoForm = ({
       />
       <div className="buttons">
         <button onClick={handleAddTodo}>Add</button>
-
         <button onClick={setAddModalOpen}>Close</button>
       </div>
     </div>

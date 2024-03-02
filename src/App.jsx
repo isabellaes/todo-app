@@ -3,14 +3,11 @@ import List from "./components/todoList/List";
 import data from "../todos.json";
 import { useState } from "react";
 import AddTodoForm from "./components/addTodo/AddTodoForm";
-import EditTodoForm from "./components/editTodo/EditTodoForm";
 
 function App() {
   const [todos, setTodos] = useState(data.todos);
   const [inputTitle, setInputTitle] = useState();
   const [inputDescription, setInputDescription] = useState();
-  const [editTodo, setEditTodo] = useState();
-  const [editModalOpen, setEditModalOpen] = useState(false);
   const [addModalOpen, setAddModalOpen] = useState(false);
 
   function handleAddTodo() {
@@ -30,36 +27,17 @@ function App() {
     setTodos(editedList);
   }
 
-  function handleSetEditModalOpen(todo) {
-    setEditTodo(todo);
-    setEditModalOpen(true);
-  }
-
-  function handleSetEditTitle(title) {
-    setEditTodo({ ...editTodo, title: title });
-  }
-  function handleSetEditDescription(description) {
-    setEditTodo({ ...editTodo, description: description });
-  }
-
-  function handleSaveEdit() {
-    const index = todos.findIndex((todo) => todo.id === editTodo.id);
-    const editedList = todos.toSpliced(index, 1, editTodo);
-    setTodos(editedList);
-    setEditTodo(null);
-  }
   return (
     <div className="app">
       <Header />
       <h1>Todos: {todos.length}</h1>
-      <button onClick={() => setAddModalOpen(true)}>Add new todo</button>
+      <button className="add-btn" onClick={() => setAddModalOpen(true)}>
+        Add new todo
+      </button>
+
       <div className="content">
         <main>
-          <List
-            todos={todos}
-            handleDeleteTodo={handleDeleteTodo}
-            handleSetEditModalOpen={handleSetEditModalOpen}
-          />
+          <List todos={todos} handleDeleteTodo={handleDeleteTodo} />
         </main>
         <aside>
           {addModalOpen ? (
@@ -68,18 +46,6 @@ function App() {
               setInputDescription={setInputDescription}
               handleAddTodo={handleAddTodo}
               setAddModalOpen={() => setAddModalOpen(false)}
-            />
-          ) : (
-            <></>
-          )}
-
-          {editModalOpen ? (
-            <EditTodoForm
-              todo={editTodo}
-              handleSetEditTitle={handleSetEditTitle}
-              handleSetEditDescription={handleSetEditDescription}
-              handleSaveEdit={handleSaveEdit}
-              handleClose={() => setEditModalOpen(false)}
             />
           ) : (
             <></>
